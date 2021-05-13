@@ -36,7 +36,7 @@ def back_rm(filename):
     # Paste the extracted darker pixels in the watermark region
     bw[np.where(dark > 0)] = darkpix.T
 
-    cv2.imwrite('final.jpg', bw)
+    cv2.imwrite('final.png', bw)
 
 
-back_rm('watermark.jpg')
+back_rm('watermark.png')

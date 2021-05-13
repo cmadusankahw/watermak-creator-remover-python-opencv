@@ -28,7 +28,7 @@ def copyright_apply(input_image_path,
     text = "© " + text + " "
     text_w, text_h = drawing.textsize(text, font)
 
-    pos = w - text_w, (h - text_h) - 50
+    pos = w - text_w, int(h/2 - text_h/2)
 
     c_text = Image.new("RGB", (text_w, (text_h)), color="#000000")
     drawing = ImageDraw.Draw(c_text)
@@ -51,7 +51,7 @@ def main():
         text_name = sys.argv[2]
 
     dir = f"scraped_images/{dir_name}"
-    output_dir = f"scraped_images/{dir_name}_watermarked"
+    output_dir = f"scraped_images/{dir_name}_watermarked_test"
     filelist = []
 
     for root, dirs, files in os.walk(dir):
